@@ -6,7 +6,7 @@
 
 // <!-- Funciones para trabajar con el Team desde la API de Strapi-->
 // URL de la API de Strapi
-const apiURLTeam = "http://localhost:1337/api/team";
+const apiURLTeam = "https://gea-strapi.up.railway.app/api/team";
 
 //? ================================================================================================
 //? (1) OBTENER Y MOSTRAR DATOS DE TEAM EN LA PÁGINA PRINCIPAL
