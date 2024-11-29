@@ -6,7 +6,7 @@
 
 // <!-- Funciones para trabajar con el Testimonial desde la API de Strapi-->
 // URL de la API de Strapi
-const apiURLTestimonial = "http://localhost:1337/api/Testimonial";
+const apiURLTestimonial = "https://gea-strapi.up.railway.app/api/Testimonial";
 
 //? ================================================================================================
 //? (1) OBTENER Y MOSTRAR DATOS DE TESTIMONIAL EN LA PÁGINA PRINCIPAL
@@ -119,7 +119,7 @@ async function fetchTestimonialContent() {
           `testimonial-pic_${index + 1}`
         );
         if (imageElement && pic?.url) {
-          imageElement.src = `http://localhost:1337${pic.url}`;
+          imageElement.src = `https://gea-strapi.up.railway.app${pic.url}`;
           imageElement.alt = `Imagen del testimonio ${index + 1}`;
         }
       });
@@ -153,7 +153,7 @@ async function loadTestimonialContent() {
   try {
     // Solicitar datos de la API de Strapi con `populate=*` para incluir imágenes
     const response = await fetch(
-      "http://localhost:1337/api/testimonial?populate=*"
+      "https://gea-strapi.up.railway.app/api/testimonial?populate=*"
     );
     if (!response.ok) {
       throw new Error(
@@ -198,7 +198,7 @@ async function loadTestimonialContent() {
         if (picArray.length > 0) {
           picArray.forEach((pic) => {
             const imgElement = document.createElement("img");
-            imgElement.src = `http://localhost:1337${pic.url}`;
+            imgElement.src = `https://gea-strapi.up.railway.app${pic.url}`;
             imgElement.alt = pic.name || `Imagen del testimonio ${i}`;
             imgElement.classList.add("thumbnail");
 
@@ -244,7 +244,7 @@ document.addEventListener("DOMContentLoaded", loadTestimonialContent);
 async function fetchAndRenderTestimonialImages() {
   try {
     const response = await fetch(
-      "http://localhost:1337/api/testimonial?populate=*"
+      "https://gea-strapi.up.railway.app/api/testimonial?populate=*"
     );
     if (!response.ok) {
       throw new Error(`Error al obtener imágenes: ${response.status}`);
@@ -268,7 +268,7 @@ async function fetchAndRenderTestimonialImages() {
     if (picArray.length > 0) {
       picArray.forEach((pic, index) => {
         const imgElement = document.createElement("img");
-        imgElement.src = `http://localhost:1337${pic.url}`;
+        imgElement.src = `https://gea-strapi.up.railway.app${pic.url}`;
         imgElement.alt = pic.name || `Imagen ${index + 1}`;
         imgElement.classList.add("thumbnail");
 
@@ -329,7 +329,7 @@ async function updateTestimonialContent() {
   try {
     // Obtener contenido actual de la API
     const currentResponse = await fetch(
-      "http://localhost:1337/api/testimonial?populate=*"
+      "https://gea-strapi.up.railway.app/api/testimonial?populate=*"
     );
     const currentData = await currentResponse.json();
 
@@ -393,7 +393,7 @@ async function updateTestimonialContent() {
     });
 
     // Realizar la solicitud PUT
-    const response = await fetch("http://localhost:1337/api/testimonial", {
+    const response = await fetch("https://gea-strapi.up.railway.app/api/testimonial", {
       method: "PUT",
       headers: {
         "Content-Type": "application/json",
