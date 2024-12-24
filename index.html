@@ -376,65 +376,123 @@
 
     <!-- Modales para el Editor de Contenido-->
     <!-- Modal de Autenticación -->
-    <div id="loginModal" class="modal">
-      <div class="modal-content">
+    <div id="loginModal" class="modal" style="display: none">
+      <div
+        class="modal-content"
+        style="
+          padding: 20px;
+          max-width: 400px;
+          margin: auto;
+          border-radius: 10px;
+          background-color: #fff;
+          box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+        "
+      >
         <img
           src="assets/img/logo-blue.png"
           alt="Logo"
           class="mb-3"
           style="
-            width: 200px;
-            height: 200px;
+            width: 150px;
+            height: 150px;
             display: block;
             margin: 0 auto;
-            border-radius: 10%;
+            border-radius: 50%;
             box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
           "
         />
-        <span
+        <button
           class="close position-absolute"
-          style="top: 10px; right: 20px"
+          style="
+            top: 10px;
+            right: 20px;
+            font-size: 1.5rem;
+            background: none;
+            border: none;
+            color: #333;
+          "
           onclick="closeModal('loginModal')"
-          >&times;</span
         >
-        <h2
-          class="mb-4 text-center text-primary"
-          style="font-weight: bold; font-size: 1.8rem"
-        >
-          Iniciar Sesión para Edición
-        </h2>
-        <div class="form-group">
-          <label
-            for="username"
-            class="font-weight-bold text-primary"
-            style="font-size: 1rem; display: block"
-            ><i>NOMBRE DE USUARIO:</i></label
-          >
-          <input
-            type="text"
-            id="username"
-            class="form-control"
-            placeholder="Usuario"
-          />
-        </div>
-        <div class="form-group mb-4">
-          <br />
-          <label
-            for="password"
-            class="font-weight-bold text-primary"
-            style="font-size: 1rem; display: block"
-            ><i>CONTRASEÑA:</i></label
-          >
-          <input
-            type="password"
-            id="password"
-            class="form-control"
-            placeholder="Contraseña"
-          />
-        </div>
-        <button onclick="login()" class="btn btn-primary">
-          Iniciar Sesión
+          &times;
         </button>
+        <h2
+          class="text-center text-primary mb-4"
+          style="font-weight: bold; font-size: 1.5rem"
+        >
+          Iniciar Sesión
+        </h2>
+        <form onsubmit="login(); return false;">
+          <div class="form-group">
+            <label
+              for="username"
+              style="
+                font-weight: bold;
+                color: #555;
+                display: block;
+                margin-bottom: 5px;
+              "
+              >Usuario:</label
+            >
+            <input
+              type="text"
+              id="username"
+              class="form-control"
+              placeholder="Ingrese su usuario"
+              required
+              style="
+                padding: 10px;
+                border: 1px solid #ddd;
+                border-radius: 5px;
+                width: 100%;
+              "
+            />
+          </div>
+          <div class="form-group mt-3">
+            <label
+              for="password"
+              style="
+                font-weight: bold;
+                color: #555;
+                display: block;
+                margin-bottom: 5px;
+              "
+              >Contraseña:</label
+            >
+            <input
+              type="password"
+              id="password"
+              class="form-control"
+              placeholder="Ingrese su contraseña"
+              required
+              style="
+                padding: 10px;
+                border: 1px solid #ddd;
+                border-radius: 5px;
+                width: 100%;
+              "
+            />
+          </div>
+          <button
+            type="submit"
+            class="btn btn-primary mt-4"
+            style="
+              width: 100%;
+              padding: 10px;
+              font-size: 1rem;
+              font-weight: bold;
+              border-radius: 5px;
+            "
+          >
+            Iniciar Sesión
+          </button>
+        </form>
+        <p class="mt-3 text-center">
+          <a
+            href="mailto:info@digitalizacionintegral.com"
+            style="font-size: 0.9rem; color: #2487ce; text-decoration: none"
+            >¿Olvidaste tu contraseña?</a
+          >
+        </p>
       </div>
     </div>
 
@@ -1348,7 +1406,7 @@
               class="btn btn-outline-primary btn-lg"
               style="font-family: 'Verdana', sans-serif"
             >
-              Guardar Cambios Sección OFFICE
+              Guardar Cambios Sección OFICINA
             </button>
           </div>
           <br />
@@ -2186,7 +2244,7 @@
               class="btn btn-outline-primary btn-lg"
               style="font-family: 'Verdana', sans-serif"
             >
-              Guardar Cambios Sección TESTIMONIOS
+              Guardar Cambios Sección SERVICIOS
             </button>
           </div>
         </div>
@@ -3215,7 +3273,7 @@
               class="btn btn-outline-primary btn-lg"
               style="font-family: 'Verdana', sans-serif"
             >
-              Guardar Cambios Sección TESTIMONIOS
+              Guardar Cambios Sección PREGUNTAS FRECUENTES
             </button>
           </div>
         </div>
@@ -4224,7 +4282,11 @@
                 <i class="bi bi-envelope flex-shrink-0"></i>
                 <div>
                   <h3>Escríbanos:</h3>
-                  <p>geidyestrada@gmail.com</p>
+                  <p>
+                    <a href="mailto:abogada@geidyestrada.com"
+                      >abogada@geidyestrada.com</a
+                    >
+                  </p>
                 </div>
               </div>
               <!-- End Info Item -->
@@ -4388,7 +4450,14 @@
             <p class="mt-4">
               <strong>Teléfono:</strong> <span>+34 657 490 138</span>
             </p>
-            <p><strong>Email:</strong> <span>geidyestrada@gmail.com</span></p>
+            <p>
+              <strong>Email:</strong>
+              <span
+                ><a href="mailto:abogada@geidyestrada.com"
+                  >abogada@geidyestrada.com</a
+                ></span
+              >
+            </p>
           </div>
         </div>
       </div>
