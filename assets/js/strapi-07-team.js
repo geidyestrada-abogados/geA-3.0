@@ -49,7 +49,7 @@ async function fetchTeamContent() {
         // Asignar imagen
         const imageElement = document.getElementById(`team-pic_${i}`);
         if (teamPic?.url && imageElement) {
-          imageElement.src = `http://localhost:1337${teamPic.url}`;
+          imageElement.src = `http://gea-strapi.up.railway.app${teamPic.url}`;
           imageElement.alt = `Imagen del equipo ${i}`;
         } else if (imageElement) {
           imageElement.src = ""; // Si no hay imagen, limpiar el src
@@ -88,7 +88,7 @@ async function loadTeamContent() {
   console.log("Iniciando carga del Team...");
   try {
     // Solicitar datos de la API de Strapi con `populate=*` para incluir imágenes
-    const response = await fetch("http://localhost:1337/api/team?populate=*");
+    const response = await fetch("http://gea-strapi.up.railway.app/api/team?populate=*");
     if (!response.ok) {
       throw new Error(
         "Error al obtener el contenido de Equipos: " + response.status
@@ -128,7 +128,7 @@ async function loadTeamContent() {
         if (picArray.length > 0) {
           picArray.forEach((pic) => {
             const imgElement = document.createElement("img");
-            imgElement.src = `http://localhost:1337${pic.url}`;
+            imgElement.src = `http://gea-strapi.up.railway.app${pic.url}`;
             imgElement.alt = pic.name || `Imagen del equipo ${i}`;
             imgElement.classList.add("thumbnail");
 
@@ -173,7 +173,7 @@ document.addEventListener("DOMContentLoaded", loadTeamContent);
 
 async function fetchAndRenderTeamImages() {
   try {
-    const response = await fetch("http://localhost:1337/api/team?populate=*");
+    const response = await fetch("http://gea-strapi.up.railway.app/api/team?populate=*");
     if (!response.ok) {
       throw new Error(`Error al obtener imágenes: ${response.status}`);
     }
@@ -194,7 +194,7 @@ async function fetchAndRenderTeamImages() {
     if (picArray.length > 0) {
       picArray.forEach((pic, index) => {
         const imgElement = document.createElement("img");
-        imgElement.src = `http://localhost:1337${pic.url}`;
+        imgElement.src = `http://gea-strapi.up.railway.app${pic.url}`;
         imgElement.alt = pic.name || `Imagen ${index + 1}`;
         imgElement.classList.add("thumbnail");
 
@@ -256,7 +256,7 @@ async function updateTeamContent() {
 
     // Obtener el contenido actual de la API
     const currentResponse = await fetch(
-      "http://localhost:1337/api/team?populate=*"
+      "http://gea-strapi.up.railway.app/api/team?populate=*"
     );
     const currentData = await currentResponse.json();
 
@@ -313,7 +313,7 @@ async function updateTeamContent() {
     });
 
     // Realizar la solicitud PUT
-    const response = await fetch("http://localhost:1337/api/team", {
+    const response = await fetch("http://gea-strapi.up.railway.app/api/team", {
       method: "PUT",
       headers: {
         "Content-Type": "application/json",
