@@ -132,6 +132,8 @@ async function openEditor() {
     }
   } else {
     //openModal("loginModal");
+    // Ocultar el preloader una vez cargado el contenido
+    hidePreloader();
     alert("Debe Iniciar Sesión para la Edición de Contenido.");
   }
 }
