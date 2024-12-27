@@ -117,7 +117,7 @@
                 <a href="#" onclick="logout()" class="submenu-item"
                   ><i class="bi bi-person-slash"></i> Cerrar Sesión</a
                 >
-                <a href="#" onclick="openEditor()" class="submenu-item"
+                <a href="#" onclick="openModaledit()" class="submenu-item"
                   ><i class="bi bi-pencil-square"></i> Edición</a
                 >
               </div>
@@ -4626,12 +4626,13 @@
       // Mostrar el modal y el preloader
       function openModaledit() {
         showPreloader();
+        // Llama a la función de carga directamente
+        openEditor();
 
-        // Simulación de carga de contenido del modal (puedes reemplazar con tu lógica de carga real)
+        /* Simulación de carga de contenido del modal (puedes reemplazar con tu lógica de carga real)
         setTimeout(() => {
-          document.getElementById("editorModal").style.display = "block";
-          hidePreloader();
-        }, 1000); // Ajusta el tiempo de simulación según sea necesario
+          openEditor();
+        }, 1000); // Ajusta el tiempo de simulación según sea necesario */
       }
 
       // Ocultar el modal
