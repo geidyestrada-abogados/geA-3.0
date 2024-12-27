@@ -183,6 +183,11 @@
       </div>
     </header>
 
+    <!-- DIV del preloader del modal de edición -->
+    <div id="preloader-edit" style="display: none">
+      <div class="spinner"></div>
+    </div>
+
     <!-- Modales -->
 
     <!-- Modal for Enlarged Image -->
@@ -4604,6 +4609,39 @@
       }
 
       window.onload = stopTranslateScroll;
+    </script>
+
+    <!-- Funciones para el preloader del modal de edición -->
+    <script>
+      // Función para mostrar el preloader
+      function showPreloader() {
+        document.getElementById("preloader-edit").style.display = "flex";
+      }
+
+      // Función para ocultar el preloader
+      function hidePreloader() {
+        document.getElementById("preloader-edit").style.display = "none";
+      }
+
+      // Asocia el preloader con la carga del modal
+      document.addEventListener("DOMContentLoaded", () => {
+        const editorModal = document.getElementById("editorModal");
+
+        if (editorModal) {
+          editorModal.addEventListener("show.bs.modal", () => {
+            showPreloader();
+
+            // Simulación de carga (puedes reemplazar con una solicitud AJAX real)
+            setTimeout(() => {
+              hidePreloader();
+            }, 1000); // Ajusta el tiempo de simulación según sea necesario
+          });
+
+          editorModal.addEventListener("hidden.bs.modal", () => {
+            hidePreloader();
+          });
+        }
+      });
     </script>
   </body>
 </html>
