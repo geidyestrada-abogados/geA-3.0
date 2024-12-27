@@ -4623,25 +4623,21 @@
         document.getElementById("preloader-edit").style.display = "none";
       }
 
-      // Asocia el preloader con la carga del modal
-      document.addEventListener("DOMContentLoaded", () => {
-        const editorModal = document.getElementById("editorModal");
+      // Mostrar el modal y el preloader
+      function openModaledit() {
+        showPreloader();
 
-        if (editorModal) {
-          editorModal.addEventListener("show.bs.modal", () => {
-            showPreloader();
+        // Simulación de carga de contenido del modal (puedes reemplazar con tu lógica de carga real)
+        setTimeout(() => {
+          document.getElementById("editorModal").style.display = "block";
+          hidePreloader();
+        }, 1000); // Ajusta el tiempo de simulación según sea necesario
+      }
 
-            // Simulación de carga (puedes reemplazar con una solicitud AJAX real)
-            setTimeout(() => {
-              hidePreloader();
-            }, 1000); // Ajusta el tiempo de simulación según sea necesario
-          });
-
-          editorModal.addEventListener("hidden.bs.modal", () => {
-            hidePreloader();
-          });
-        }
-      });
+      // Ocultar el modal
+      function closeModaledit() {
+        document.getElementById("editorModal").style.display = "none";
+      }
     </script>
   </body>
 </html>
