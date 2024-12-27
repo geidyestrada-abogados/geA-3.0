@@ -45,7 +45,7 @@ async function login() {
 
   try {
     // Utilizando la URL correcta para la autenticación
-    const response = await fetch("https://gea-strapi.up.railway.app/api/auth/local", {
+    const response = await fetch("http://localhost:1337/api/auth/local", {
       method: "POST",
       headers: { "Content-Type": "application/json" },
       body: JSON.stringify({ identifier: username, password: password }),
@@ -125,6 +125,8 @@ async function openEditor() {
       console.log("Faq cargado exitosamente.");
 
       openModal("editorModal");
+      // Ocultar el preloader una vez cargado el contenido
+      hidePreloader();
     } catch (error) {
       console.error("Error cargando contenidos:", error);
     }
