@@ -3,7 +3,7 @@ let selectedImageUrl = null;
 async function fetchHeroBackgrounds() {
   try {
     const response = await fetch(
-      "https://gea-strapi.up.railway.app/api/hero?populate=Background"
+      "http://localhost:1337/api/hero?populate=Background"
     );
     const heroData = await response.json();
 
@@ -27,7 +27,7 @@ function renderBackgroundImages(backgroundImages) {
 
   backgroundImages.forEach((image) => {
     const imgElement = document.createElement("img");
-    imgElement.src = `https://gea-strapi.up.railway.app${image.url}`;
+    imgElement.src = `http://localhost:1337${image.url}`;
     imgElement.alt = image.name;
     imgElement.classList.add("thumbnail");
 
@@ -54,7 +54,7 @@ async function saveBackground() {
   }
 
   try {
-    await fetch("https://gea-strapi.up.railway.app/api/hero", {
+    await fetch("http://localhost:1337/api/hero", {
       method: "PUT",
       headers: {
         "Content-Type": "application/json",
@@ -81,7 +81,7 @@ async function saveBackground() {
 
 function updateHeroBackground() {
   const heroElement = document.getElementById("hero");
-  heroElement.style.backgroundImage = `url(https://gea-strapi.up.railway.app${selectedImageUrl})`;
+  heroElement.style.backgroundImage = `url(http://localhost:1337${selectedImageUrl})`;
   console.log("Actualización en el Hero con:", selectedImageUrl);
 }
 
