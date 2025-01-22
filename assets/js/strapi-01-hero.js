@@ -6,7 +6,7 @@
 
 // <!-- Funciones para trabajar com el HERO desde la API de Strapi-->
 // URL de la API de Strapi
-const apiURLhero = "http://www.geidyestrada.com:1337/api/hero";
+const apiURLhero = "http://www.geidyestrada.com/api/hero";
 
 //! =========================================================================================
 //! (1) OBTENER Y MOSTRAR DATOS DEL HERO
@@ -56,8 +56,8 @@ async function fetchHeroContent() {
 
     // Establece la imagen de fondo desde Strapi si existe
     if (heroData.Background && heroData.Background.url) {
-      const backgroundUrl = `http://www.geidyestrada.com:1337${heroData.Background.url}`;
-      const baseUrl = "http://www.geidyestrada.com:1337"; // Cambia esto si usas otra URL base para Strapi
+      const backgroundUrl = `http://www.geidyestrada.com${heroData.Background.url}`;
+      const baseUrl = "http://www.geidyestrada.com"; // Cambia esto si usas otra URL base para Strapi
       const largeImageUrl = `${baseUrl}${heroData.Background.formats.large.url}`; // Utiliza 'large' o el formato deseado
 
       console.log("URL de fondo desde Strapi:", backgroundUrl); // Verifica que esta URL sea correcta
@@ -87,7 +87,7 @@ document.addEventListener("DOMContentLoaded", fetchHeroContent);
 //! -- INICIO FUNCIÓN -- loadContent() (Cargar contenido del Hero en el Editor) ///////////////////////////////////////////////////////////////////////////////////////////////
 async function loadContent() {
   try {
-    const response = await fetch("http://www.geidyestrada.com:1337/api/hero?populate=*");
+    const response = await fetch("http://www.geidyestrada.com/api/hero?populate=*");
     if (!response.ok) {
       throw new Error("Error al obtener el contenido: " + response.status);
     }
@@ -125,7 +125,7 @@ async function loadContent() {
         // Completa la URL con el dominio de Strapi si es relativa
         const fullBackgroundUrl = backgroundUrl.startsWith("http")
           ? backgroundUrl
-          : `http://www.geidyestrada.com:1337${backgroundUrl}`;
+          : `http://www.geidyestrada.com${backgroundUrl}`;
 
         document.getElementById(
           "hero"
@@ -162,7 +162,7 @@ let selectedImageId = null; // Para almacenar el ID de la imagen seleccionada
 async function fetchHeroBackgrounds() {
   try {
     const response = await fetch(
-      "http://www.geidyestrada.com:1337/api/hero?populate=Background"
+      "http://www.geidyestrada.com/api/hero?populate=Background"
     );
     const heroData = await response.json();
 
@@ -186,7 +186,7 @@ function renderBackgroundImages(backgroundImages) {
 
   backgroundImages.forEach((image) => {
     const imgElement = document.createElement("img");
-    imgElement.src = `http://www.geidyestrada.com:1337${image.url}`;
+    imgElement.src = `http://www.geidyestrada.com${image.url}`;
     imgElement.alt = image.name;
     imgElement.classList.add("thumbnail");
 
@@ -213,7 +213,7 @@ function renderBackgroundImages(backgroundImages) {
 function updateImagePreview() {
   const previewElement = document.getElementById("imagePreview");
   if (previewElement && selectedImageUrl) {
-    previewElement.style.backgroundImage = `url(http://www.geidyestrada.com:1337${selectedImageUrl})`;
+    previewElement.style.backgroundImage = `url(http://www.geidyestrada.com${selectedImageUrl})`;
     console.log("Vista previa actualizada con:", selectedImageUrl);
   }
 }
@@ -234,7 +234,7 @@ async function saveBackground() {
 
     // Obtiene el arreglo actual `Background` de Strapi
     const currentResponse = await fetch(
-      "http://www.geidyestrada.com:1337/api/hero?populate=Background"
+      "http://www.geidyestrada.com/api/hero?populate=Background"
     );
     const currentData = await currentResponse.json();
     const existingBackgroundImages = currentData.data.Background || [];
@@ -248,7 +248,7 @@ async function saveBackground() {
     ];
 
     // Envía el arreglo completo actualizado a Strapi
-    const response = await fetch("http://www.geidyestrada.com:1337/api/hero", {
+    const response = await fetch("http://www.geidyestrada.com/api/hero", {
       method: "PUT",
       headers: {
         "Content-Type": "application/json",
@@ -265,7 +265,7 @@ async function saveBackground() {
     console.log("PUT response data:", responseData);
 
     const updatedResponse = await fetch(
-      "http://www.geidyestrada.com:1337/api/hero?populate=Background"
+      "http://www.geidyestrada.com/api/hero?populate=Background"
     );
     const updatedData = await updatedResponse.json();
     console.log(
@@ -284,7 +284,7 @@ async function saveBackground() {
 function updateHeroBackground() {
   const heroElement = document.getElementById("hero");
   if (heroElement && selectedImageUrl) {
-    heroElement.style.backgroundImage = `url(http://www.geidyestrada.com:1337${selectedImageUrl})`;
+    heroElement.style.backgroundImage = `url(http://www.geidyestrada.com${selectedImageUrl})`;
     console.log("Actualización en el Hero con:", selectedImageUrl);
   }
 }
@@ -318,7 +318,7 @@ async function updateContent() {
   const newCardCont4 = document.getElementById("edit-cardcont4").value;
 
   try {
-    const response = await fetch("http://www.geidyestrada.com:1337/api/hero", {
+    const response = await fetch("http://www.geidyestrada.com/api/hero", {
       method: "PUT",
       headers: {
         "Content-Type": "application/json",
