@@ -6,7 +6,7 @@
 
 // <!-- Funciones para trabajar com el HERO desde la API de Strapi-->
 // URL de la API de Strapi
-const apiURLfaq = "http://localhost:1337/api/faq";
+const apiURLfaq = "https://www.geidyestrada.com/api/faq";
 
 //* =========================================================================================
 //* (1) OBTENER Y MOSTRAR DATOS DE FAQ
@@ -189,7 +189,7 @@ document.addEventListener("DOMContentLoaded", fetchFaqContent);
 //* -- INICIO FUNCIÓN -- loadContent() (Cargar contenido de Faqs en el Editor) ///////////////////////////////////////////////////////////////////////////////////////////////
 async function loadFaqContent() {
   try {
-    const response = await fetch("http://localhost:1337/api/faq");
+    const response = await fetch("https://www.geidyestrada.com/api/faq");
     if (!response.ok) {
       throw new Error("Error al obtener el contenido: " + response.faqus);
     }
@@ -524,7 +524,7 @@ async function updateFaqContent() {
 
   try {
     // Usar la URL correcta para Single Type
-    const response = await fetch("http://localhost:1337/api/faq", {
+    const response = await fetch("https://www.geidyestrada.com/api/faq", {
       method: "PUT",
       headers: {
         "Content-Type": "application/json",
