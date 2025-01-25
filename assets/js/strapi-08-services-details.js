@@ -6,7 +6,7 @@
 
 // <!-- Funciones para trabajar com el HERO desde la API de Strapi-->
 // URL de la API de Strapi
-const apiURLservice = "https://www.geidyestrada.com/api/service-detail";
+const apiURLservice = "https://gea-strapi.up.railway.app/api/service-detail";
 
 //* =========================================================================================
 //* (1) OBTENER Y MOSTRAR DATOS DE SERVICE-DETAILSS-DETAILS
@@ -165,7 +165,7 @@ document.addEventListener("DOMContentLoaded", fetchDetailContent);
 //* -- INICIO FUNCIÓN -- loadContent() (Cargar contenido de Services en el Editor) ///////////////////////////////////////////////////////////////////////////////////////////////
 async function loadServiceContent() {
   try {
-    const response = await fetch("https://www.geidyestrada.com/api/service-detail");
+    const response = await fetch("https://gea-strapi.up.railway.app/api/service-detail");
     if (!response.ok) {
       throw new Error("Error al obtener el contenido: " + response.serviceus);
     }
@@ -355,7 +355,7 @@ async function updateServiceContent() {
 
   try {
     // Usar la URL correcta para Single Type
-    const response = await fetch("https://www.geidyestrada.com/api/service-detail", {
+    const response = await fetch("https://gea-strapi.up.railway.app/api/service-detail", {
       method: "PUT",
       headers: {
         "Content-Type": "application/json",
