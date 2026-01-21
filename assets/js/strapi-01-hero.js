@@ -87,7 +87,7 @@ document.addEventListener("DOMContentLoaded", fetchHeroContent);
 //! -- INICIO FUNCIÓN -- loadContent() (Cargar contenido del Hero en el Editor) ///////////////////////////////////////////////////////////////////////////////////////////////
 async function loadContent() {
   try {
-    const response = await fetch("https://gea-strapi.up.railway.app/api/hero?populate=*");
+    const response = await fetch("https://automatic-cheese-6aca9a943b.strapiapp.com/api/hero?populate=*");
     if (!response.ok) {
       throw new Error("Error al obtener el contenido: " + response.status);
     }
@@ -162,7 +162,7 @@ let selectedImageId = null; // Para almacenar el ID de la imagen seleccionada
 async function fetchHeroBackgrounds() {
   try {
     const response = await fetch(
-      "https://gea-strapi.up.railway.app/api/hero?populate=Background"
+      "https://automatic-cheese-6aca9a943b.strapiapp.com/hero?populate=Background"
     );
     const heroData = await response.json();
 
@@ -213,7 +213,7 @@ function renderBackgroundImages(backgroundImages) {
 function updateImagePreview() {
   const previewElement = document.getElementById("imagePreview");
   if (previewElement && selectedImageUrl) {
-    previewElement.style.backgroundImage = `url(https://gea-strapi.up.railway.app${selectedImageUrl})`;
+    previewElement.style.backgroundImage = `url(https://automatic-cheese-6aca9a943b.strapiapp.com${selectedImageUrl})`;
     console.log("Vista previa actualizada con:", selectedImageUrl);
   }
 }
@@ -248,7 +248,7 @@ async function saveBackground() {
     ];
 
     // Envía el arreglo completo actualizado a Strapi
-    const response = await fetch("https://gea-strapi.up.railway.app/api/hero", {
+    const response = await fetch("https://automatic-cheese-6aca9a943b.strapiapp.com/api/hero", {
       method: "PUT",
       headers: {
         "Content-Type": "application/json",
@@ -265,7 +265,7 @@ async function saveBackground() {
     console.log("PUT response data:", responseData);
 
     const updatedResponse = await fetch(
-      "https://gea-strapi.up.railway.app/api/hero?populate=Background"
+      "https://automatic-cheese-6aca9a943b.strapiapp.com/hero?populate=Background"
     );
     const updatedData = await updatedResponse.json();
     console.log(
@@ -284,7 +284,7 @@ async function saveBackground() {
 function updateHeroBackground() {
   const heroElement = document.getElementById("hero");
   if (heroElement && selectedImageUrl) {
-    heroElement.style.backgroundImage = `url(https://gea-strapi.up.railway.app${selectedImageUrl})`;
+    heroElement.style.backgroundImage = `url(https://automatic-cheese-6aca9a943b.strapiapp.com${selectedImageUrl})`;
     console.log("Actualización en el Hero con:", selectedImageUrl);
   }
 }
@@ -353,4 +353,5 @@ async function updateContent() {
 //! -- FIN DE FUNCIÓN --> updateContent() (Función para cargar y mostrar la primera imagen del arreglo `Background` en Hero) //////////////////////////////////////////////////////
 
 //! FIN de Funciones para actualizar contenido del HERO en la BD de Strapi
+
 
