@@ -118,7 +118,7 @@ document.addEventListener("DOMContentLoaded", fetchStatContent);
 //* -- INICIO FUNCIÓN -- loadContent() (Cargar contenido de Stats en el Editor) ///////////////////////////////////////////////////////////////////////////////////////////////
 async function loadStatContent() {
   try {
-    const response = await fetch("https://gea-strapi.up.railway.app/api/stat");
+    const response = await fetch("https://automatic-cheese-6aca9a943b.strapiapp.com/api/stat");
     if (!response.ok) {
       throw new Error("Error al obtener el contenido: " + response.status);
     }
@@ -228,7 +228,7 @@ async function updateStatContent() {
 
   try {
     // Usar la URL correcta para Single Type
-    const response = await fetch("https://gea-strapi.up.railway.app/api/stat", {
+    const response = await fetch("https://automatic-cheese-6aca9a943b.strapiapp.com/api/stat", {
       method: "PUT",
       headers: {
         "Content-Type": "application/json",
@@ -258,4 +258,5 @@ async function updateStatContent() {
   }
 }
 //* -- FIN DE FUNCIÓN --> updateStatContent() (Función para actualizar los contenidos de STATS en la BD) ////////////////////////////////////////////////
+
 
