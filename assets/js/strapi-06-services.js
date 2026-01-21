@@ -6,7 +6,7 @@
 
 // <!-- Funciones para trabajar com el HERO desde la API de Strapi-->
 // URL de la API de Strapi
-const apiURLservice = "https://gea-strapi.up.railway.app/api/service";
+const apiURLservice = "https://automatic-cheese-6aca9a943b.strapiapp.com/api/service";
 
 //* =========================================================================================
 //* (1) OBTENER Y MOSTRAR DATOS DE SERVICES
@@ -345,3 +345,4 @@ async function updateServiceContent() {
   }
 }
 //* -- FIN DE FUNCIÓN --> updateServiceContent() (Función para actualizar los contenidos de SERVICES en la BD) ////////////////////////////////////////////////
+
