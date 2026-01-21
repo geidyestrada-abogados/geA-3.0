@@ -189,7 +189,7 @@ document.addEventListener("DOMContentLoaded", fetchFaqContent);
 //* -- INICIO FUNCIÓN -- loadContent() (Cargar contenido de Faqs en el Editor) ///////////////////////////////////////////////////////////////////////////////////////////////
 async function loadFaqContent() {
   try {
-    const response = await fetch("https://gea-strapi.up.railway.app/api/faq");
+    const response = await fetch("https://automatic-cheese-6aca9a943b.strapiapp.com/api/faq");
     if (!response.ok) {
       throw new Error("Error al obtener el contenido: " + response.faqus);
     }
@@ -524,7 +524,7 @@ async function updateFaqContent() {
 
   try {
     // Usar la URL correcta para Single Type
-    const response = await fetch("https://gea-strapi.up.railway.app/api/faq", {
+    const response = await fetch("https://automatic-cheese-6aca9a943b.strapiapp.com/api/faq", {
       method: "PUT",
       headers: {
         "Content-Type": "application/json",
@@ -554,4 +554,5 @@ async function updateFaqContent() {
   }
 }
 //* -- FIN DE FUNCIÓN --> updateFaqContent() (Función para actualizar los contenidos de FAQ en la BD) ////////////////////////////////////////////////
+
 
