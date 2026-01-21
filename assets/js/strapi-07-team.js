@@ -6,7 +6,7 @@
 
 // <!-- Funciones para trabajar con el Team desde la API de Strapi-->
 // URL de la API de Strapi
-const apiURLTeam = "https://gea-strapi.up.railway.app/api/team";
+const apiURLTeam = "https://automatic-cheese-6aca9a943b.strapiapp.com/api/team";
 
 //? ================================================================================================
 //? (1) OBTENER Y MOSTRAR DATOS DE TEAM EN LA PÁGINA PRINCIPAL
@@ -341,3 +341,4 @@ async function updateTeamContent() {
 //? -- FIN DE FUNCIÓN --> updateContent() (Función para cargar y mostrar la primera imagen en el Team) /////////////////////////////////////////////////////////////////
 
 //? FIN de Función para actualizar contenido del Team en la BD de Strapi
+
