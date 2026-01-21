@@ -125,7 +125,7 @@ document.addEventListener("DOMContentLoaded", fetchServiceContent);
 //* -- INICIO FUNCIÓN -- loadContent() (Cargar contenido de Services en el Editor) ///////////////////////////////////////////////////////////////////////////////////////////////
 async function loadServiceContent() {
   try {
-    const response = await fetch("https://gea-strapi.up.railway.app/api/service");
+    const response = await fetch("https://automatic-cheese-6aca9a943b.strapiapp.com/api/service");
     if (!response.ok) {
       throw new Error("Error al obtener el contenido: " + response.serviceus);
     }
@@ -315,7 +315,7 @@ async function updateServiceContent() {
 
   try {
     // Usar la URL correcta para Single Type
-    const response = await fetch("https://gea-strapi.up.railway.app/api/service", {
+    const response = await fetch("https://automatic-cheese-6aca9a943b.strapiapp.com/api/service", {
       method: "PUT",
       headers: {
         "Content-Type": "application/json",
@@ -345,4 +345,5 @@ async function updateServiceContent() {
   }
 }
 //* -- FIN DE FUNCIÓN --> updateServiceContent() (Función para actualizar los contenidos de SERVICES en la BD) ////////////////////////////////////////////////
+
 
