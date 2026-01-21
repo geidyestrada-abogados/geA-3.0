@@ -6,7 +6,7 @@
 
 // <!-- Funciones para trabajar con el Office desde la API de Strapi-->
 // URL de la API de Strapi
-const apiURLoffice = "https://gea-strapi.up.railway.app/api/office";
+const apiURLoffice = "https://automatic-cheese-6aca9a943b.strapiapp.com/api/office";
 
 //TODO =========================================================================================
 //TODO (1) OBTENER Y MOSTRAR DATOS DE OFFICE
@@ -326,3 +326,4 @@ async function updateOfficeContent() {
   }
 }
 //TODO -- FIN DE FUNCIÓN --> updateOfficeContent() (Función para cargar y mostrar la primera imagen de la oficina en Office) ////////////////////////////////////////////////
+
