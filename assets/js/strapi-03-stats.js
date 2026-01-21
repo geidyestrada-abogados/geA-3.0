@@ -6,7 +6,7 @@
 
 // <!-- Funciones para trabajar com el HERO desde la API de Strapi-->
 // URL de la API de Strapi
-const apiURLstat = "https://gea-strapi.up.railway.app/api/stat";
+const apiURLstat = "https://automatic-cheese-6aca9a943b.strapiapp.com/api/stat";
 
 //* =========================================================================================
 //* (1) OBTENER Y MOSTRAR DATOS DE STATS
@@ -258,3 +258,4 @@ async function updateStatContent() {
   }
 }
 //* -- FIN DE FUNCIÓN --> updateStatContent() (Función para actualizar los contenidos de STATS en la BD) ////////////////////////////////////////////////
+
