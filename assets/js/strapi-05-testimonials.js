@@ -6,7 +6,7 @@
 
 // <!-- Funciones para trabajar con el Testimonial desde la API de Strapi-->
 // URL de la API de Strapi
-const apiURLTestimonial = "https://gea-strapi.up.railway.app/api/Testimonial";
+const apiURLTestimonial = "https://automatic-cheese-6aca9a943b.strapiapp.com/api/Testimonial";
 
 //? ================================================================================================
 //? (1) OBTENER Y MOSTRAR DATOS DE TESTIMONIAL EN LA PÁGINA PRINCIPAL
@@ -420,3 +420,4 @@ async function updateTestimonialContent() {
 //? -- FIN DE FUNCIÓN --> updateContent() (Función para cargar y mostrar la primera imagen en el Testimonial) /////////////////////////////////////////////////////////////////
 
 //? FIN de Función para actualizar contenido del Testimonial en la BD de Strapi
+
