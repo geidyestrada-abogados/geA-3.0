@@ -6,7 +6,7 @@
 
 // <!-- Funciones para trabajar com el HERO desde la API de Strapi-->
 // URL de la API de Strapi
-const apiURLhero = "https://gea-strapi.up.railway.app/api/hero";
+const apiURLhero = "https://automatic-cheese-6aca9a943b.strapiapp.com/api/hero";
 
 //! =========================================================================================
 //! (1) OBTENER Y MOSTRAR DATOS DEL HERO
@@ -56,8 +56,8 @@ async function fetchHeroContent() {
 
     // Establece la imagen de fondo desde Strapi si existe
     if (heroData.Background && heroData.Background.url) {
-      const backgroundUrl = `https://gea-strapi.up.railway.app${heroData.Background.url}`;
-      const baseUrl = "https://gea-strapi.up.railway.app"; // Cambia esto si usas otra URL base para Strapi
+      const backgroundUrl = `https://automatic-cheese-6aca9a943b.strapiapp.com${heroData.Background.url}`;
+      const baseUrl = "https://automatic-cheese-6aca9a943b.strapiapp.com"; // Cambia esto si usas otra URL base para Strapi
       const largeImageUrl = `${baseUrl}${heroData.Background.formats.large.url}`; // Utiliza 'large' o el formato deseado
 
       console.log("URL de fondo desde Strapi:", backgroundUrl); // Verifica que esta URL sea correcta
@@ -353,3 +353,4 @@ async function updateContent() {
 //! -- FIN DE FUNCIÓN --> updateContent() (Función para cargar y mostrar la primera imagen del arreglo `Background` en Hero) //////////////////////////////////////////////////////
 
 //! FIN de Funciones para actualizar contenido del HERO en la BD de Strapi
+
