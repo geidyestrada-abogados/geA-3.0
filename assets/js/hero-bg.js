@@ -3,7 +3,7 @@ let selectedImageUrl = null;
 async function fetchHeroBackgrounds() {
   try {
     const response = await fetch(
-      "http://localhost:1337/api/hero?populate=Background"
+      "http://https://automatic-cheese-6aca9a943b.strapiapp.com/api/hero?populate=Background"
     );
     const heroData = await response.json();
 
@@ -27,7 +27,7 @@ function renderBackgroundImages(backgroundImages) {
 
   backgroundImages.forEach((image) => {
     const imgElement = document.createElement("img");
-    imgElement.src = `http://localhost:1337${image.url}`;
+    imgElement.src = `https://automatic-cheese-6aca9a943b.strapiapp.com${image.url}`;
     imgElement.alt = image.name;
     imgElement.classList.add("thumbnail");
 
@@ -54,7 +54,7 @@ async function saveBackground() {
   }
 
   try {
-    await fetch("http://localhost:1337/api/hero", {
+    await fetch("https://automatic-cheese-6aca9a943b.strapiapp.com/api/hero", {
       method: "PUT",
       headers: {
         "Content-Type": "application/json",
@@ -81,9 +81,10 @@ async function saveBackground() {
 
 function updateHeroBackground() {
   const heroElement = document.getElementById("hero");
-  heroElement.style.backgroundImage = `url(http://localhost:1337${selectedImageUrl})`;
+  heroElement.style.backgroundImage = `url(https://automatic-cheese-6aca9a943b.strapiapp.com${selectedImageUrl})`;
   console.log("Actualización en el Hero con:", selectedImageUrl);
 }
 
 // Inicializar la carga de imágenes al cargar la página
 fetchHeroBackgrounds();
+
