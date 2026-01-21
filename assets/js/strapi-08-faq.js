@@ -6,7 +6,7 @@
 
 // <!-- Funciones para trabajar com el HERO desde la API de Strapi-->
 // URL de la API de Strapi
-const apiURLfaq = "https://gea-strapi.up.railway.app/api/faq";
+const apiURLfaq = "https://automatic-cheese-6aca9a943b.strapiapp.com/api/faq";
 
 //* =========================================================================================
 //* (1) OBTENER Y MOSTRAR DATOS DE FAQ
@@ -554,3 +554,4 @@ async function updateFaqContent() {
   }
 }
 //* -- FIN DE FUNCIÓN --> updateFaqContent() (Función para actualizar los contenidos de FAQ en la BD) ////////////////////////////////////////////////
+
