@@ -45,7 +45,7 @@ async function login() {
 
   try {
     // Utilizando la URL correcta para la autenticación
-    const response = await fetch("https://gea-strapi.up.railway.app/api/auth/local", {
+    const response = await fetch("https://automatic-cheese-6aca9a943b.strapiapp.com/api/auth/local", {
       method: "POST",
       headers: { "Content-Type": "application/json" },
       body: JSON.stringify({ identifier: username, password: password }),
@@ -172,3 +172,4 @@ function logout() {
 }
 
 //* <!-- FIN de Script para manejo de autenticación, edición y cierre de sesión -->
+
