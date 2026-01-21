@@ -125,7 +125,7 @@ async function loadContent() {
         // Completa la URL con el dominio de Strapi si es relativa
         const fullBackgroundUrl = backgroundUrl.startsWith("https")
           ? backgroundUrl
-          : `https://gea-strapi.up.railway.app${backgroundUrl}`;
+          : `https://automatic-cheese-6aca9a943b.strapiapp.com${backgroundUrl}`;
 
         document.getElementById(
           "hero"
@@ -186,7 +186,7 @@ function renderBackgroundImages(backgroundImages) {
 
   backgroundImages.forEach((image) => {
     const imgElement = document.createElement("img");
-    imgElement.src = `https://gea-strapi.up.railway.app${image.url}`;
+    imgElement.src = `https://automatic-cheese-6aca9a943b.strapiapp.com${image.url}`;
     imgElement.alt = image.name;
     imgElement.classList.add("thumbnail");
 
@@ -234,7 +234,7 @@ async function saveBackground() {
 
     // Obtiene el arreglo actual `Background` de Strapi
     const currentResponse = await fetch(
-      "https://gea-strapi.up.railway.app/api/hero?populate=Background"
+      "https://automatic-cheese-6aca9a943b.strapiapp.com/api/hero?populate=Background"
     );
     const currentData = await currentResponse.json();
     const existingBackgroundImages = currentData.data.Background || [];
@@ -318,7 +318,7 @@ async function updateContent() {
   const newCardCont4 = document.getElementById("edit-cardcont4").value;
 
   try {
-    const response = await fetch("https://gea-strapi.up.railway.app/api/hero", {
+    const response = await fetch("https://automatic-cheese-6aca9a943b.strapiapp.com/api/hero", {
       method: "PUT",
       headers: {
         "Content-Type": "application/json",
