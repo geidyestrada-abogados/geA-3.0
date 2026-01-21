@@ -6,7 +6,7 @@
 
 // <!-- Funciones para trabajar con el About desde la API de Strapi-->
 // URL de la API de Strapi
-const apiURLabout = "https://gea-strapi.up.railway.app/api/about";
+const apiURLabout = "https://automatic-cheese-6aca9a943b.strapiapp.com/api/about";
 
 //? ================================================================================================
 //? (1) OBTENER Y MOSTRAR DATOS DEL ABOUT
@@ -356,3 +356,4 @@ async function updateAboutContent() {
 //? -- FIN DE FUNCIÓN --> updateContent() (Función para cargar y mostrar la primera imagen de Geidy en el About) /////////////////////////////////////////////////////////////////
 
 //? FIN de Función para actualizar contenido del ABOUT en la BD de Strapi
+
