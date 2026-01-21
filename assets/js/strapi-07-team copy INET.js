@@ -6,7 +6,7 @@
 
 // <!-- Funciones para trabajar con el Team desde la API de Strapi-->
 // URL de la API de Strapi
-const apiURLTeam = "http://gea-strapi.up.railway.app/api/team";
+const apiURLTeam = "https://automatic-cheese-6aca9a943b.strapiapp.com/api/team";
 
 //? ================================================================================================
 //? (1) OBTENER Y MOSTRAR DATOS DE TEAM EN LA PÁGINA PRINCIPAL
@@ -176,7 +176,7 @@ document.addEventListener("DOMContentLoaded", loadTeamContent);
 async function fetchAndRenderTeamImages() {
   try {
     const response = await fetch(
-      "http://gea-strapi.up.railway.app/api/team?populate=*"
+      "https://automatic-cheese-6aca9a943b.strapiapp.com/api/team?populate=*"
     );
     if (!response.ok) {
       throw new Error(`Error al obtener imágenes: ${response.status}`);
@@ -317,7 +317,7 @@ async function updateTeamContent() {
     });
 
     // Realizar la solicitud PUT
-    const response = await fetch("http://gea-strapi.up.railway.app/api/team", {
+    const response = await fetch("https://automatic-cheese-6aca9a943b.strapiapp.com/api/team", {
       method: "PUT",
       headers: {
         "Content-Type": "application/json",
@@ -345,3 +345,4 @@ async function updateTeamContent() {
 //? -- FIN DE FUNCIÓN --> updateContent() (Función para cargar y mostrar la primera imagen en el Team) /////////////////////////////////////////////////////////////////
 
 //? FIN de Función para actualizar contenido del Team en la BD de Strapi
+
