@@ -6,7 +6,7 @@
 
 // <!-- Funciones para trabajar com el HERO desde la API de Strapi-->
 // URL de la API de Strapi
-const apiURLservice = "https://gea-strapi.up.railway.app/api/service-detail";
+const apiURLservice = "https://automatic-cheese-6aca9a943b.strapiapp.com/service-detail";
 
 //* =========================================================================================
 //* (1) OBTENER Y MOSTRAR DATOS DE SERVICE-DETAILSS-DETAILS
@@ -165,7 +165,7 @@ document.addEventListener("DOMContentLoaded", fetchDetailContent);
 //* -- INICIO FUNCIÓN -- loadContent() (Cargar contenido de Services en el Editor) ///////////////////////////////////////////////////////////////////////////////////////////////
 async function loadServiceContent() {
   try {
-    const response = await fetch("https://gea-strapi.up.railway.app/api/service-detail");
+    const response = await fetch("https://automatic-cheese-6aca9a943b.strapiapp.com/api/service-detail");
     if (!response.ok) {
       throw new Error("Error al obtener el contenido: " + response.serviceus);
     }
@@ -355,7 +355,7 @@ async function updateServiceContent() {
 
   try {
     // Usar la URL correcta para Single Type
-    const response = await fetch("https://gea-strapi.up.railway.app/api/service-detail", {
+    const response = await fetch("https://automatic-cheese-6aca9a943b.strapiapp.com/api/service-detail", {
       method: "PUT",
       headers: {
         "Content-Type": "application/json",
@@ -385,3 +385,4 @@ async function updateServiceContent() {
   }
 }
 //* -- FIN DE FUNCIÓN --> updateServiceContent() (Función para actualizar los contenidos de SERVICE-DETAILSS-DETAILS en la BD) ////////////////////////////////////////////////
+
